@@ -5,14 +5,17 @@ using UnityEngine;
 public class SpawnCubes : MonoBehaviour
 {
 	public Transform prefab;
+
+    public int cubeNumber;
    
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 1; i < 5; i++)
+        for (int i = 0; i < cubeNumber; i++)
         {
-            Instantiate(prefab, new Vector3(2.0F, 0, 0), Quaternion.identity);
+
+            Instantiate(prefab, new Vector3(Random.Range(-1.8f, 1.8f), 0.7f, Random.Range(-1.8f, 1.8f)), Quaternion.identity);
         }
     }
 
